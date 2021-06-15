@@ -7,14 +7,18 @@
 #       Store input numbers
 
 print(" Please insert two numbers to find the multiplication and division between them ")
-num1 = input('Enter first number: ')
-num2 = input('Enter second number: ')
-
+while True:
+    try:
+        num1 = float(input('Enter first number: '))
+        num2 = float(input('Enter second number: '))
+    except ValueError:
+        print("Only numbers are accepted inputs.")
 #       Calculate multiplication and division
-factor = float(num1) * float(num2)
-division = float(num1) / float(num2)
-# Display the multiplication
-print('{0} multiply by {1} is {2}'.format(num1, num2, factor))
-# Display the division
-print('{0} divided  by {1} is {2}'.format(num1, num2, division))
+    else:
+        factor = float(num1) * float(num2)
+        division = 'undefined' if float(num2) == 0 else float(num1) / float(num2)
+        #       Display the multiplication
+        print('{0} multiply by {1} is {2}'.format(num1, num2, factor))
+        # Display the division
+        print('{0} divided  by {1} is {2}'.format(num1, num2, division))
 
